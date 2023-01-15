@@ -1,5 +1,7 @@
 # IL_TZ
 
+[![Rust](https://github.com/ofersadan85/il_tz/actions/workflows/rust.yml/badge.svg)](https://github.com/ofersadan85/il_tz/actions/workflows/rust.yml)
+
 A Rust library for working with Israeli ID numbers (TZ is the Hebrew acronym for "ID number").
 
 ## Usage
