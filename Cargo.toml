@@ -4,7 +4,12 @@ version = "0.1.0"
 edition = "2021"
 authors = ["Ofer Sadan <ofersadan85@gmail.com>"]
 description = "A Rust library for working with Israeli ID numbers (TZ)"
-
+readme = "README.md"
+homepage = "https://github.com/ofersadan85/il_tz"
+repository = "https://github.com/ofersadan85/il_tz"
+license = "MIT"
+keywords = ["id", "israel", "tz", "validation", "parsing"]
+categories = ["data-structures", "parsing"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
