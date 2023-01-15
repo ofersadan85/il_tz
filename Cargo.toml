@@ -1,6 +1,6 @@
 [package]
 name = "il_tz"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Ofer Sadan <ofersadan85@gmail.com>"]
 description = "A Rust library for working with Israeli ID numbers (TZ)"

@@ -116,7 +116,10 @@ pub fn int2tz<T>(n: T) -> Result<TZ, TZError>
 where
     T: Integer + std::fmt::Display + std::convert::From<usize>,
 {
-    if n > MAX_TZ_RANGE.into() || n < 0.into() {
+    if n > MAX_TZ_RANGE.into() {
+        return Err(TZError::InvalidTZLength(n.to_string()));
+    }
+    if n < 0.into() {
         return Err(TZError::InvalidTZ(n.to_string()));
     }
     str2tz(&n.to_string())
@@ -220,49 +223,22 @@ mod tests {
 
     #[test]
     fn test_str_short() {
-        assert_eq!(
-            str2tz("12345678").unwrap(),
-            str2tz("012345678").unwrap()
-        );
-        assert_eq!(
-            str2tz("1234567").unwrap(),
-            str2tz("001234567").unwrap()
-        );
-        assert_eq!(
-            str2tz("123456").unwrap(),
-            str2tz("000123456").unwrap()
-        );
-        assert_eq!(
-            str2tz("12345").unwrap(),
-            str2tz("000012345").unwrap()
-        );
-        assert_eq!(
-            str2tz("1234").unwrap(),
-            str2tz("000001234").unwrap()
-        );
-        assert_eq!(
-            str2tz("123").unwrap(),
-            str2tz("000000123").unwrap()
-        );
-        assert_eq!(
-            str2tz("12").unwrap(),
-            str2tz("000000012").unwrap()
-        );
+        assert_eq!(str2tz("12345678").unwrap(), str2tz("012345678").unwrap());
+        assert_eq!(str2tz("1234567").unwrap(), str2tz("001234567").unwrap());
+        assert_eq!(str2tz("123456").unwrap(), str2tz("000123456").unwrap());
+        assert_eq!(str2tz("12345").unwrap(), str2tz("000012345").unwrap());
+        assert_eq!(str2tz("1234").unwrap(), str2tz("000001234").unwrap());
+        assert_eq!(str2tz("123").unwrap(), str2tz("000000123").unwrap());
+        assert_eq!(str2tz("12").unwrap(), str2tz("000000012").unwrap());
         assert_eq!(str2tz("1").unwrap(), str2tz("000000001").unwrap());
         assert_eq!(str2tz("").unwrap(), str2tz("000000000").unwrap());
     }
 
     #[test]
     fn test_int_good() {
-        assert_eq!(
-            int2tz(123456789).unwrap(),
-            str2tz("123456789").unwrap()
-        );
+        assert_eq!(int2tz(123456789).unwrap(), str2tz("123456789").unwrap());
         assert_eq!(int2tz(11).unwrap(), str2tz("000000011").unwrap());
-        assert_eq!(
-            int2tz(MAX_TZ_RANGE).unwrap(),
-            str2tz("999999999").unwrap()
-        );
+        assert_eq!(int2tz(MAX_TZ_RANGE).unwrap(), str2tz("999999999").unwrap());
     }
 
     #[test]
