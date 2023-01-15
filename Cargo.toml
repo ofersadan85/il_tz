@@ -1,0 +1,13 @@
+[package]
+name = "il_tz"
+version = "0.1.0"
+edition = "2021"
+authors = ["Ofer Sadan <ofersadan85@gmail.com>"]
+description = "A Rust library for working with Israeli ID numbers (TZ)"
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+num = "0.4.0"
+thiserror = "1.0.38"
