@@ -27,9 +27,9 @@ pub enum TZDigit {
     Nine = 9,
 }
 
-impl Into<u8> for TZDigit {
-    fn into(self) -> u8 {
-        self as u8
+impl From<TZDigit> for u8 {
+    fn from(val: TZDigit) -> Self {
+        val as u8
     }
 }
 
