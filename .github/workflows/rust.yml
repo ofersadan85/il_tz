@@ -22,6 +22,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build
-        run: cargo build --verbose
+        run: cargo build --all-targets --features cli --verbose
       - name: Run tests
-        run: cargo test --verbose
+        run: cargo test --all-targets --features cli --verbose

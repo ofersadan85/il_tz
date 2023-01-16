@@ -16,3 +16,13 @@ categories = ["data-structures", "parsing"]
 [dependencies]
 num = "0.4.0"
 thiserror = "1.0.38"
+clap = { version = "4.1.1", features = ["derive"], optional = true }
+
+[features]
+cli = ["clap"]
+
+[[bin]]
+name = "iltz"
+path = "src/main.rs"
+doc = false
+required-features = ["cli"]
