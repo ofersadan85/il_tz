@@ -6,11 +6,56 @@
 [![Docs.rs](https://docs.rs/il_tz/badge.svg)](https://docs.rs/il_tz)
 [![License](https://img.shields.io/crates/l/il_tz.svg)](LICENSE.md)
 
-A Rust library for working with Israeli ID numbers (TZ is the Hebrew acronym for "ID number").
+A Rust library for working with Israeli ID numbers (TZ is the [Hebrew](https://en.wikipedia.org/wiki/Israeli_identity_card) acronym for "ID").
 
-## Usage
+## Install (CLI)
 
-Run this command:
+Download the binary for your system from the [latest release](https://github.com/ofersadan85/il_tz/releases/latest)
+
+You can also install it using `cargo install`:
+
+```bash
+cargo install il_tz --features cli
+```
+
+## Usage (CLI)
+
+```text
+> iltz --help
+Validate Israeli ID numbers (TZ)
+
+Usage: iltz.exe [TZ]... [COMMAND]
+
+Commands:
+  generate  Generates a list of valid TZ values
+  help      Print this message or the help of the given subcommand(s)
+
+Arguments:
+  [TZ]...  A list of ID numbers (TZ) to validate
+
+Options:
+  -h, --help  Print help
+```
+
+### CLI Examples
+
+```text
+> iltz 999999998 999999999
+999999998 true
+999999999 false
+
+> iltz generate 50 100
+000000059
+000000067
+000000075
+000000083
+000000091
+000000109
+```
+
+## As a dependency
+
+To use it in your own Rust projects, run this command:
 
 ```bash
 cargo add il_tz
@@ -26,9 +71,9 @@ il_tz = "0.1.2"
 > **Warning**
 > Verify the latest version number on [crates.io](https://crates.io/crates/il_tz).
 
-## Example
+## Rust Example
 
-This example shows how to convert an integer to a TZ, how to convert a string to a TZ, and validating them.
+This example shows how to convert an integer to a `TZ`, how to convert a string to a `TZ`, and validating them.
 
 ```rust
 use il_tz::{int2tz, str2tz, tz2str, validate};
