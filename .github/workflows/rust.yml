@@ -89,9 +89,9 @@ jobs:
       - name: Zip release files
         run: |
           mkdir -p release/${{ github.ref_name }}
-          zip -9 release/${{ github.ref_name }}/iltz-linux-${{ github.ref_name }}.zip release/iltz-linux-${{ github.ref_name }}/iltz
-          zip -9 release/${{ github.ref_name }}/iltz-macos-${{ github.ref_name }}.zip release/iltz-macos-${{ github.ref_name }}/iltz
-          zip -9 release/${{ github.ref_name }}/iltz-windows-${{ github.ref_name }}.zip release/iltz-windows-${{ github.ref_name }}/iltz.exe
+          zip -9 --junk-paths release/${{ github.ref_name }}/iltz-linux-${{ github.ref_name }}.zip release/iltz-linux-${{ github.ref_name }}/iltz
+          zip -9 --junk-paths release/${{ github.ref_name }}/iltz-macos-${{ github.ref_name }}.zip release/iltz-macos-${{ github.ref_name }}/iltz
+          zip -9 --junk-paths release/${{ github.ref_name }}/iltz-windows-${{ github.ref_name }}.zip release/iltz-windows-${{ github.ref_name }}/iltz.exe
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
