@@ -65,7 +65,7 @@ Alternatively, add this to your Cargo.toml:
 
 ```toml
 [dependencies]
-il_tz = "0.1.2"
+il_tz = "0.1.3"
 ```
 
 > **Warning**
