@@ -1,23 +1,30 @@
 # IL_TZ
 
 [![Rust](https://github.com/ofersadan85/il_tz/actions/workflows/rust.yml/badge.svg)](https://github.com/ofersadan85/il_tz/actions/workflows/rust.yml)
+[![Publish](https://github.com/ofersadan85/il_tz/actions/workflows/publish.yml/badge.svg)](https://github.com/ofersadan85/il_tz/actions/workflows/publish.yml)
+[![Crates.io](https://img.shields.io/crates/v/il_tz.svg)](https://crates.io/crates/il_tz)
+[![Docs.rs](https://docs.rs/il_tz/badge.svg)](https://docs.rs/il_tz)
+[![License](https://img.shields.io/crates/l/il_tz.svg)](LICENSE.md)
 
 A Rust library for working with Israeli ID numbers (TZ is the Hebrew acronym for "ID number").
 
 ## Usage
 
-Add this to your Cargo.toml:
+Run this command:
+
+```bash
+cargo add il_tz
+```
+
+Alternatively, add this to your Cargo.toml:
 
 ```toml
 [dependencies]
 il_tz = "0.1.2"
 ```
 
-Alternatively, run this command:
-
-```bash
-cargo add il_tz
-```
+> **Warning**
+> Verify the latest version number on [crates.io](https://crates.io/crates/il_tz).
 
 ## Example
 
