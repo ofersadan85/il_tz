@@ -41,7 +41,7 @@ jobs:
       - name: Build
         run: cargo build --release --all-targets --all-features --verbose
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: iltz-linux-${{ github.ref_name }}
           path: target/release/iltz
@@ -56,7 +56,7 @@ jobs:
       - name: Build
         run: cargo build --release --all-targets --all-features --verbose
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: iltz-macos-${{ github.ref_name }}
           path: target/release/iltz
@@ -71,7 +71,7 @@ jobs:
       - name: Build
         run: cargo build --release --all-targets --all-features --verbose
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: iltz-windows-${{ github.ref_name }}
           path: target/release/iltz.exe
