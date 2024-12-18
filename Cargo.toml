@@ -15,7 +15,7 @@ categories = ["data-structures", "parsing"]
 
 [dependencies]
 num = "0.4.0"
-thiserror = "1.0.38"
+thiserror = "2.0.8"
 clap = { version = "4.1.1", features = ["derive"], optional = true }
 
 [features]
